@@ -1,0 +1,107 @@
+Este documento describe las principales medidas calculadas en DAX utilizadas en el informe de Power BI para el análisis de ventas de Moda Chic.
+
+1️⃣ Nombre completo del cliente
+
+Concatena el nombre y apellido del cliente en un solo campo.
+
+Nombre completo =
+CONCATENATE(
+    'clientes'[Nombre],
+    CONCATENATE(" ", 'clientes'[Apellido])
+)
+
+2️⃣ Ciudad y nombre de la sucursal
+
+Combina la ciudad y el nombre de la sucursal para su identificación.
+
+Ciudad y sucursal =
+CONCATENATE(
+    sucursales[ciudad],
+    CONCATENATE(" ", sucursales[nombre])
+)
+
+3️⃣ Conteo de ventas
+
+Cuenta el número de registros de ventas.
+
+Cuenta =
+COUNT(ventas2[total venta])
+
+4️⃣ Desviación estándar de las ventas
+
+Mide la dispersión del monto de ventas.
+
+Desviación estándar =
+STDEV.P(ventas2[total venta])
+
+5️⃣ Venta máxima
+
+Obtiene el valor máximo registrado de ventas.
+
+Máximo =
+MAX(ventas2[total venta])
+
+6️⃣ Venta mínima
+
+Obtiene el valor mínimo registrado de ventas.
+
+Mínimo =
+MIN(ventas2[total venta])
+
+7️⃣ Porcentaje de ventas por producto
+
+Calcula la participación porcentual de cada producto respecto al total de ventas.
+
+Porcentaje de venta por producto =
+DIVIDE(
+    SUM(ventas2[total venta]),
+    CALCULATE(SUM(ventas2[total venta]), ALL(ventas2)),
+    0
+) * 100
+
+8️⃣ Promedio de ventas
+
+Calcula el valor promedio de las ventas.
+
+Promedio =
+AVERAGE(ventas2[total venta])
+
+9️⃣ Promedio de ventas por fecha
+
+Calcula el promedio de ventas considerando cada fecha.
+
+Promedio por fecha =
+AVERAGEX(
+    VALUES(ventas2[fecha]),
+    CALCULATE(SUM(ventas2[total venta]))
+)
+
+🔟 Promedio de ventas por sucursal
+
+Calcula el promedio de ventas por sucursal.
+
+Promedio por sucursal =
+AVERAGEX(
+    VALUES(ventas2[sucursal_id]),
+    CALCULATE(SUM(ventas2[total venta]))
+)
+
+1️⃣1️⃣ Total de ventas sin la categoría “Ropa”
+
+Suma las ventas excluyendo la categoría Ropa.
+
+Suma sin la categoría Ropa =
+SUMX(
+    FILTER(
+        ventas2,
+        RELATED(productos[Categoría]) <> "Ropa"
+    ),
+    ventas2[total venta]
+)
+
+1️⃣2️⃣ Total de ventas
+
+Calcula el monto total de ventas.
+
+Total de ventas =
+SUM(ventas2[total venta])
