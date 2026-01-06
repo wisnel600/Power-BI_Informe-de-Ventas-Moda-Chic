@@ -54,6 +54,37 @@ Analizar resultados por categoría de producto
 
 Filtrar por rangos específicos de fechas
 
+📌 KPIs Principales
+
+El dashboard incluye los siguientes indicadores clave de desempeño (KPIs) para evaluar el comportamiento de las ventas durante el mes de mayo de 2024:
+
+💰 Total de Ventas
+Suma total del monto de ventas realizadas en el periodo analizado.
+
+📊 Promedio de Ventas
+Valor promedio de las ventas, utilizado para identificar el nivel medio de ingresos.
+
+📈 Venta Máxima
+Monto máximo de venta registrado, útil para detectar picos de ventas.
+
+📉 Venta Mínima
+Monto mínimo de venta registrado durante el mes.
+
+📐 Desviación Estándar de las Ventas
+Mide la variabilidad de las ventas respecto al promedio, permitiendo evaluar la estabilidad del desempeño comercial.
+
+📦 Porcentaje de Ventas por Producto
+Participación porcentual de cada producto respecto al total de ventas.
+
+🏬 Promedio de Ventas por Sucursal
+Indicador que permite comparar el desempeño promedio entre sucursales.
+
+📅 Promedio de Ventas por Fecha
+Permite analizar el comportamiento promedio diario de las ventas.
+
+👕 Ventas sin la Categoría “Ropa”
+Total de ventas excluyendo la categoría ropa, útil para análisis comparativos entre líneas de productos.
+
 📈 Conclusión
 
 Este informe está diseñado para proporcionar una visión integral del desempeño comercial de la tienda, facilitando la identificación de tendencias, picos de ventas y áreas de oportunidad que pueden apoyar la toma de decisiones y la mejora de la estrategia comercial.
